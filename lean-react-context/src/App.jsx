@@ -6,7 +6,8 @@ import './App.css'
 
 import Home from './components/Home'
 import About from './components/About'
-import NavBar from './components/NavBar'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 export const DataContext = createContext();
 
@@ -20,11 +21,12 @@ function App() {
 
   return (
      <DataContext.Provider value={data}>
-     <NavBar /> 
+     <Nav /> 
      <Routes>
        <Route path='/' element={<Home />} />
        <Route path='/About' element={<About />} />
      </Routes>
+     <Footer />
     </DataContext.Provider>
   )
 }

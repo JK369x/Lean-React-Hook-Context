@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../App'
-
+import { Container , HomeLayout } from '../styles/styles'
 
 function Home() {
   
@@ -8,17 +8,19 @@ function Home() {
     console.log(data);
 
   return (
-  <div>
+    
+  <Container>
       <h1>Home</h1>
-      <div>
-          <img src={data.basics?.picture}></img>
-          <ul>
-              <li><strong>Name</strong> : {data.basics?.name}</li>
-              <li><strong>Headline</strong> : {data.basics?.headline}</li>
+      <HomeLayout>
+          <img style={{ borderRadius: '10px' }} src={data.basics?.picture}></img>
+          <ul style={{ listStyle: 'none' }}>
+              <li style={{ fontSize: '2rem' }}><strong>Name</strong> : {data.basics?.name}</li>
+              <li style={{ fontSize: '1.2rem' }}><strong>Headline</strong> : {data.basics?.headline}</li>
 
           </ul>
-      </div>
-  </div>
+      </HomeLayout>
+  </Container>
+   
   )
 }
 
